@@ -1,5 +1,5 @@
 {
-   "name": "task5",
+   "name": "kanban_tasks",
    "version": "0.1.0",
    "private": true,
    "scripts": {
@@ -46,7 +46,6 @@
       "postcss-simple-vars": "^7.0.1",
       "prettier": "^3.4.1",
       "sass": "^1.81.0",
-      "simple-git-hooks": "^2.11.1",
       "typescript": "^5"
    },
    "browserslist": [
@@ -55,8 +54,5 @@
       "opera >= 111",
       "not dead",
       "not op_mini all"
-   ],
-   "simple-git-hooks": {
-      "prepare-commit-msg": "node ./task5/.gitlint.config.js"
-   }
+   ]
 }

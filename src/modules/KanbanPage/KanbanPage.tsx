@@ -15,7 +15,6 @@ import { useStagedTasks } from './hooks/stagedTasks';
 import { useGetTaskByTaskIdQuery, useGetUsersQuery } from '@/api/appApi';
 import InfoModal from '@/modules/TaskPage/components/InfoModal/InfoModal';
 import { useModalInfo } from '@/hooks/useModalInfo';
-
 import style from './kanban-page.module.scss';
 import { z } from 'zod';
 import { tasksFilterFormSchema } from './utils/validationSchema';
@@ -28,10 +27,6 @@ import CalendarCustom from '@/components/calendar_custom/CalendarCustom';
 import { RangeCalendar } from '@/components/range_calendar/RangeCalendar';
 
 type FormSchema = z.infer<typeof tasksFilterFormSchema>;
-
-
-
-// const ScrollBar = Scrollbars as unknown as JSXElementConstructor<ScrollbarProps>;
 
 export function KanbanPage() {
    const router = useRouter();
@@ -78,7 +73,7 @@ export function KanbanPage() {
    useEffect(() => {
       const { unsubscribe } = watch((value) => {
          setAwaiting(true);
-         setTimeout(() => setAwaiting(false), 300);         
+         setTimeout(() => setAwaiting(false), 300);
       });
       return () => unsubscribe();
    }, [watch]);
@@ -198,9 +193,10 @@ export function KanbanPage() {
                <label htmlFor="taskName">Название задачи</label>
                <input
                   onInput={(e) => {
-                     if ((e.target as HTMLInputElement).value?.length > 2) try { tasksRefetch() } catch {
-                        
-                     };
+                     if ((e.target as HTMLInputElement).value?.length > 2)
+                        try {
+                           tasksRefetch();
+                        } catch {}
                   }}
                   style={{ backgroundColor: errors.taskName ? '#FFF1F0' : undefined }}
                   id="taskName"
