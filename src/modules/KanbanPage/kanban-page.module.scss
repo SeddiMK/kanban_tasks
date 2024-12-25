@@ -1,0 +1,176 @@
+.base {
+   display: flex;
+   flex-direction: column;
+   height: calc(100vh - 4rem);
+
+   /* &>*:nth-last-child(-n+2) {
+      position: relative;
+      width: 100%;
+      flex-basis: 100%;
+      flex-grow: 1;
+   } */
+
+   & > *:last-child {
+      /* display: none; */
+
+      position: relative;
+      width: 100%;
+      flex-basis: 100%;
+      flex-grow: 1;
+   }
+}
+
+.title {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+
+   & > div {
+      margin-left: 1rem;
+   }
+
+   & > h6 {
+      margin-bottom: 0 !important;
+      flex-grow: 1;
+   }
+
+   button {
+      background-color: var(--main-blue);
+      color: white;
+      height: 40px;
+      padding: 0 2rem;
+      border-radius: 8px;
+
+      span {
+         border: 1px solid white;
+         width: 16px;
+         height: 16px;
+         display: inline-block;
+         border-radius: 4px;
+         line-height: 12px;
+         margin-right: 0.5rem;
+         text-align: center;
+      }
+   }
+}
+
+.filters {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.9rem;
+   align-items: end;
+   justify-content: space-between;
+
+   & + .filters {
+      margin-top: 1rem;
+      width: 49.5%;
+
+      & > div {
+         flex-grow: 0.5;
+      }
+   }
+
+   .filtered_ddbox {
+      color: var(--bread-crumbs-text);
+      font-size: 14px;
+      flex-basis: 23%;
+      max-width: none;
+
+      span svg path {
+         fill: #abbed1;
+      }
+   }
+
+   & > div {
+      flex-grow: 0.24;
+      flex-basis: 23%;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+   }
+
+   @media screen and (max-width: 1279px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      & + .filters {
+         width: 100%;
+      }
+   }
+
+   label {
+      display: block;
+      color: var(--bread-crumbs-text);
+      font-size: 14px;
+   }
+
+   input {
+      width: 264px;
+      width: 100%;
+      height: 40px;
+   }
+}
+
+.kanban_container {
+   overflow: auto;
+
+   overflow: -moz-scrollbars-none;
+   scrollbar-width: none;
+
+   width: 100%;
+   width: max-content;
+
+   &::-webkit-scrollbar {
+      width: 0;
+   }
+}
+
+.kanban {
+   display: flex;
+   justify-content: space-around;
+   margin-top: 2rem;
+   gap: 1rem;
+   min-width: 1280px;
+
+   & > div > h4 {
+      margin-top: 0 !important;
+      color: var(--nav-menu-btns);
+      font-size: 14px !important;
+      margin: 0.75rem 0;
+      display: inline-block;
+
+      &::after {
+         content: attr(data-count);
+         position: absolute;
+         right: -2rem;
+         background-color: var(--bread-crumbs-back);
+         padding: 0.25rem 0.5rem;
+         color: var(--main-blue);
+         border-radius: 8px;
+         top: -0.25rem;
+         font-size: 12px;
+         font-weight: 400;
+      }
+   }
+
+   & > div,
+   & > .col {
+      flex: 1 1 0px;
+      min-width: 245px;
+
+      .tasks {
+         padding: 0.6rem;
+         background-color: #f4f6f8;
+         height: 50rem;
+         /* height: 85%; */
+         min-width: 256px;
+         border-radius: 0.75rem;
+         transition: 0.5s;
+
+         display: flex;
+         flex-direction: column;
+         gap: 0.6rem;
+      }
+   }
+}

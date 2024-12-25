@@ -1,0 +1,38 @@
+.textarea-wrp {
+   width: 100%;
+   min-height: 148px;
+
+   .textarea-header {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 3px;
+      background-color: #f4f6f8;
+      padding: 8px 20px;
+      display: flex;
+
+      .btn-textarea-icon {
+         width: 16px;
+         height: 16px;
+
+         &:hover {
+            border: 1px solid #d9dde1;
+            border-radius: 2px;
+         }
+      }
+      .btn-textarea-active {
+         border: 1px solid #3787eb;
+         border-radius: 2px;
+      }
+   }
+
+   .textarea {
+      width: 100%;
+      min-height: 116px;
+      resize: none;
+      font-size: 16px;
+      line-height: 143%;
+      color: #222;
+      background-color: #f4f6f8;
+      padding: 16px 20px;
+   }
+}

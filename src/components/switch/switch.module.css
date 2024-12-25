@@ -1,0 +1,28 @@
+.container {
+   background-color: white;
+   border: 1px solid gray;
+   transition: 1s;
+
+   cursor: pointer;
+
+   .ball {
+      border-radius: 50%;
+      transition: 1s;
+      background-color: gray;
+
+      top: 0.08rem;
+      transform: translateX(2px);
+      /* left: 0.15rem; */
+   }
+
+   &.active {
+      background-color: var(--main-blue);
+      border: 1px solid var(--main-blue);
+
+      .ball {
+         transform: translateX(16px);
+         /* left: 0.85rem; */
+         background-color: white;
+      }
+   }
+}

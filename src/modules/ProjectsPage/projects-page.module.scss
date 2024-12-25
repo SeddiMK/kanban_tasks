@@ -1,0 +1,137 @@
+.container {
+   display: flex;
+
+   .content {
+      flex-shrink: 0;
+      flex-grow: 1;
+      flex-basis: calc(100vw - var(--nav-menu-width));
+
+      padding: 2rem;
+
+      .filters {
+         display: flex;
+         justify-content: space-around;
+         gap: 1rem;
+         margin-bottom: 1.2rem;
+
+         & > * {
+            flex-basis: 50%;
+            &::after {
+               content: attr(data-error);
+               color: #eb597b;
+               font-size: 11px;
+               position: relative;
+               top: 6px;
+            }
+
+            input {
+               width: 100%;
+            }
+         }
+      }
+
+      .archive_checkbox {
+         margin: 1rem 0;
+         display: flex;
+         gap: 0.5rem;
+
+         input {
+            cursor: pointer;
+         }
+      }
+
+      h4 {
+         font-size: 18px;
+         font-weight: 600;
+         margin-top: 0.4rem;
+      }
+
+      .projects,
+      .favorite_projects {
+         margin: 1rem 0;
+         display: flex;
+         flex-wrap: wrap;
+         gap: 1rem;
+
+         /* grid-template-columns: repeat(3, minmax(15%, 400px)); */
+         /* grid-template-columns: repeat(3, 1fr); */
+         display: grid;
+         grid-template-columns: repeat(var(--columns-count), 1fr);
+      }
+
+      .favorite_projects {
+         & > * {
+            height: 151px !important;
+         }
+      }
+
+      hr {
+         height: 1px;
+         /* Neutral 300: */
+         background-color: #eeeeee;
+         margin: 2rem 0;
+      }
+   }
+
+   input {
+      background-color: var(--bread-crumbs-back);
+
+      border-radius: 0.5rem;
+      font-size: 14px;
+      padding: 0.6rem 0;
+      padding-left: 1.2rem;
+      padding-right: 0.6rem;
+      color: #333333;
+
+      &::placeholder {
+         color: var(--bread-crumbs-text);
+      }
+   }
+
+   h1 {
+      font-size: 32px;
+      margin: 2rem 0;
+      font-weight: bold;
+   }
+
+   h6,
+   label {
+      /* font-size: 14px; */
+      color: var(--bread-crumbs-text);
+      margin-bottom: 0.5rem;
+      display: block;
+      cursor: auto;
+   }
+}
+
+.found_task {
+   position: absolute;
+
+   width: 100%;
+   background-color: aliceblue;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 0 0 1rem 1rem;
+   bottom: -40.1px;
+   box-shadow: 0 9px 15px lightgray;
+   color: darkgoldenrod;
+   cursor: pointer;
+   
+   a {
+      width: 100%;
+      text-align: center;
+      height: 100%;
+      background-color: antiquewhite;
+      line-height: 40px;
+      vertical-align: middle;
+      border-radius: 0 0 1rem 1rem;
+
+      border: 1px solid antiquewhite;
+
+      &:focus{
+         border: 1px solid lightgray;
+      }
+   }
+}

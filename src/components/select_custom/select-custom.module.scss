@@ -1,0 +1,118 @@
+$primary-color: #007bff;
+$border-color: #ccc;
+$background-color: #f4f6f8;
+$hover-color: #f4f6f8;
+$text-color: #222;
+$error-color: #eb597b;
+
+$width-arrow: 16px;
+$width-select: 285px;
+$height-select: 40px;
+
+.error {
+   font-size: 11px;
+   line-height: 100%;
+   color: $error-color;
+   margin-top: 6px;
+}
+
+.select-custom {
+   width: 100%;
+
+   .label {
+      color: #a6a6a6;
+      margin-bottom: 6px;
+   }
+
+   .select-wrp {
+      position: relative;
+      cursor: pointer;
+      margin-top: 6px;
+
+      .dropdown-arrow {
+         display: block;
+         position: absolute;
+         right: 12px;
+         top: 50%;
+         transform: translateY(-50%);
+         width: $width-arrow;
+         height: $width-arrow;
+
+         transition: transform 0.3s ease;
+
+         &.open {
+            transform: rotate(180deg) translateY(45%);
+         }
+         svg {
+            display: block;
+            transform-origin: center;
+            width: 100%;
+            height: 100%;
+         }
+      }
+   }
+
+   .select-title {
+      font-size: 14px;
+      color: #a6a6a6;
+
+      &.selected {
+         color: $text-color;
+      }
+   }
+}
+
+.select {
+   position: relative;
+   cursor: pointer;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border: 1px solid transparent;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 143%;
+   color: $text-color;
+   border-radius: 8px;
+   padding: 10px 20px;
+   background-color: $background-color;
+
+   &.open {
+      outline: none;
+      border: 1px solid #3787eb;
+   }
+}
+
+.dropdown-list {
+   position: absolute;
+   top: 100%;
+   left: 0;
+   width: 100%;
+   max-height: 350px;
+   overflow-y: auto;
+   border: 1px solid #eee;
+   border-radius: 6px;
+   padding: 8px 0px;
+   box-shadow:
+      0 8px 16px -2px rgba(27, 36, 44, 0.12),
+      0 2px 2px -1px rgba(27, 35, 44, 0.04);
+   background: #fff;
+   z-index: 10;
+   margin-top: 8px;
+}
+
+.dropdown-item {
+   padding: 9.5px 16px;
+   cursor: pointer;
+   background-color: #fff;
+   color: #333;
+
+   &:hover {
+      background-color: $hover-color;
+   }
+
+   span {
+      border-radius: 5px;
+      padding: 2px 6px;
+   }
+}

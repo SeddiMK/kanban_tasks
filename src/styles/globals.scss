@@ -1,0 +1,369 @@
+:root {
+   --background: #ffffff;
+   --foreground: #171717;
+
+   // UI COLORS:
+
+   --nav-menu-back: #1b1a1d; // Neutral 900
+   --nav-menu-btns: #2d2d2d; // Neutral 700
+   --nav-menu-hints: #787878; // Neutral 600
+   --bread-crumbs-text: #a6a6a6; // Neutral 500
+   --bread-crumbs-back: #f4f6f8; // Neutral 200 --- input backs, project-cards back
+
+   // PRIMARY:
+
+   --main-blue: #3787eb;
+   --tasks-text-color: #798fa5;
+
+   --active-link: #3787eb; // e.g. bread-crumbs
+
+   --nav-menu-width: 272px;
+}
+
+$w-cell: 32px;
+
+@media (prefers-color-scheme: dark) {
+   /* :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  } */
+}
+
+html,
+body {
+   max-width: 100vw;
+   overflow-x: hidden;
+}
+
+body {
+   color: var(--foreground);
+   background: var(--background);
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+
+   color: var(--foreground);
+   background: var(--background);
+   font-family: Arial, Helvetica, sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   position: relative;
+}
+
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+   html {
+      color-scheme: dark;
+   }
+}
+
+/* ------------------- Reset css ----------------- */
+* {
+   padding: 0px;
+   margin: 0px;
+   border: 0px;
+}
+
+*,
+*:before,
+*:after {
+   box-sizing: border-box;
+}
+
+html,
+body {
+   height: 100%;
+}
+
+body {
+   text-rendering: optimizeLegibility;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+:focus,
+:active {
+   outline: none;
+}
+
+a:focus,
+a:active {
+   outline: none;
+}
+
+input,
+button,
+textarea {
+   font-family: var(--base-font);
+   font-size: inherit;
+}
+
+button {
+   cursor: pointer;
+   color: inherit;
+   background-color: inherit;
+}
+
+a {
+   color: inherit;
+}
+
+a:link,
+a:visited {
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: none;
+}
+
+ul li {
+   list-style: none;
+}
+
+img {
+   vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: inherit;
+   font-size: inherit;
+}
+
+/* Fix slaider */
+* {
+   min-width: 0;
+}
+
+/* ------------------- Calendar Custom ----------------- */
+/* Общий стиль для календаря */
+.react-calendar {
+   width: 264px;
+   max-width: 100%;
+   background-color: #ffffff;
+   border: none;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   position: absolute;
+   top: 5px;
+   left: 0px;
+   z-index: 10;
+
+   border: 1px solid #eee;
+   border-radius: 4px;
+   width: 264px;
+   box-shadow:
+      0 8px 16px -2px rgba(27, 36, 44, 0.12),
+      0 2px 2px -1px rgba(27, 35, 44, 0.04);
+   background: #fff;
+
+   padding: 12px 24px;
+
+   &__navigation {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #3787eb;
+
+      &__label {
+         text-transform: capitalize;
+      }
+
+      &__arrow {
+         width: 32px;
+         height: 32px;
+         background: none;
+         font-size: 26px;
+         font-weight: 250;
+      }
+   }
+
+   // Сегодняшний день
+   &__tile--now {
+      background: #3787eb;
+      color: #ffffff;
+   }
+
+   // Ячейки календаря (дни недели)
+   &__month-view {
+      &__weekdays {
+         font-weight: 400;
+         font-size: 10px;
+         line-height: 160%;
+         color: #a6a6a6;
+
+         &__weekday {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: $w-cell;
+            height: $w-cell;
+
+            text-transform: uppercase;
+
+            &:first-child {
+               text-decoration: none;
+            }
+
+            abbr {
+               text-decoration: none;
+            }
+         }
+      }
+      &__days {
+         // Ячейки календаря (дни)
+         &__day {
+            height: $w-cell;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 143%;
+            text-align: center;
+            color: #222;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+
+            &:hover {
+               border: 1px solid #3787eb;
+               border-radius: 4px;
+               width: 32px;
+               height: 32px;
+            }
+
+            &:focus {
+               border: 2px solid #2d2d2d;
+               border-radius: 4px;
+               width: 32px;
+               height: 32px;
+            }
+            &:disabled {
+               color: #abbed1;
+            }
+
+            &--active {
+               background: #3787eb;
+               color: #ffffff;
+            }
+
+            &--neighboringMonth {
+               color: #abbed1;
+            }
+         }
+      }
+   }
+
+   // Отступы между строками календаря
+   &__month-view {
+      &__days__day {
+      }
+   }
+}
+
+// Стили для активных дат (выбранных)
+.react-calendar__tile--active,
+.react-calendar__tile----now {
+   background-color: #3787eb;
+   color: #ffffff;
+}
+// Отступы между строками календаря
+.react-calendar__tile----now {
+   background-color: #3787eb;
+   color: #ffffff;
+}
+
+// Навигация
+.react-calendar__navigation__next2-button {
+   display: none; // Убираем стрелки навигации
+}
+.react-calendar__navigation__prev2-button {
+   display: none; // Убираем стрелки навигации
+}
+
+.wrapped {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+// Стили для редактора комментариев
+.editable.placeholder {
+   color: #a6a6a6;
+   position: absolute;
+   top: 12px;
+   left: 18px;
+}
+.editable.strong {
+   font-weight: 700;
+}
+.editable.em {
+   font-style: italic;
+}
+.editable.code {
+   font-style: italic;
+   font-size: 12px;
+}
+.editable.item-ol {
+   list-style-type: auto;
+   list-style-position: inside;
+}
+.editable.item-ul {
+   list-style-type: circle;
+   list-style-position: inside;
+}
+.loader {
+   border: 16px solid #f3f3f3; /* Light grey */
+   border-top: 16px solid #3498db; /* Blue */
+   border-radius: 50%;
+   width: 70px;
+   height: 70px;
+   position: absolute;
+   left: calc(50% - 51px);
+   animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+
+.range_calendar {
+   .react-calendar__tile--now{
+      background-color: white;
+   }
+   .react-calendar__tile--active{
+      background-color: #3787eb;
+   }
+}
+

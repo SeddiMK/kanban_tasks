@@ -1,0 +1,187 @@
+$success-img: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3327 4L5.99935 11.3333L2.66602 8' stroke='%23009262' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
+$error-img: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 4L4 12' stroke='%23E02B1D' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M4 4L12 12' stroke='%23E02B1D' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
+
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.form {
+  width: 302px;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 137%;
+  color: #1b1a1d;
+}
+.label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: #a6a6a6;
+  padding-bottom: 6px;
+  pointer-events: none;
+  transform-origin: 0 0;
+  transition:
+    opacity 0.15s ease-in-out,
+    transform 0.15s ease-in-out;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  background-clip: padding-box;
+  padding: 11.5px 20px;
+  border-radius: 8px;
+  width: 302px;
+  height: 40px;
+  background-color: #f4f6f8;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: #222;
+  outline: none;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  transition: padding 0.2s;
+
+  &_valid {
+    background-color: aquamarine;
+  }
+  &_invalid {
+    background-color: #fff1f0;
+  }
+  &::placeholder {
+    color: #a6a6a6;
+    opacity: 0.4;
+  }
+  &:focus,
+  &:not(:placeholder-shown) {
+    padding-top: 23.5px;
+    padding-bottom: 7.5px;
+    border: 1px solid #abbed1;
+  }
+  &_box {
+    position: relative;
+    padding-top: 24px;
+  }
+  &:focus ~ .foremail,
+  &:not(:placeholder-shown) ~ .foremail {
+    left: 9px;
+    opacity: 0.65;
+    transform: scale(0.85) translateY(-0.75rem) translateX(0.15rem);
+  }
+
+  &:focus ~ .forpassword,
+  &:not(:placeholder-shown) ~ .forpassword {
+    left: 15px;
+    opacity: 0.65;
+    transform: scale(0.85) translateY(-0.75rem) translateX(0.15rem);
+  }
+  &:hover {
+    border: 1px solid #3787eb;
+  }
+}
+.submit {
+  margin-top: 24px;
+  border-radius: 6px;
+  width: 300px;
+  height: 40px;
+  border: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 171%;
+  text-align: center;
+  color: #fff;
+  background-color: #3787eb;
+  position: relative;
+
+  &:hover {
+    background-color: #4b93ed;
+  }
+  &:focus {
+    outline: 2px solid #1b1a1d;
+  }
+  &:active {
+    background-color: #0053ad;
+    outline: none;
+  }
+  &:disabled {
+    background-color: #eef5fc;
+    outline: none;
+    color: #abbed1;
+  }
+}
+.foremail,
+.forpassword {
+  position: absolute;
+  bottom: 11.5px;
+  left: 21px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  color: #a6a6a6;
+  transition: all 0.2s;
+}
+
+.message {
+  &_invalid {
+    padding-top: 6px;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 120%;
+    color: #eb597b;
+  }
+}
+.loader {
+  position: absolute;
+  top: 10px;
+  right: 116px;
+  animation: loading 2s infinite linear;
+}
+
+.auth {
+  &_error,
+  &_success {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    padding-left: 20px;
+    padding-top: 8px;
+    position: relative;
+  }
+  &_error {
+    color: #e02b1d;
+  }
+  &_success {
+    color: #009262;
+  }
+  &_success::before {
+    content: $success-img;
+    position: absolute;
+    top: 6px;
+    left: 0;
+  }
+  &_error::before {
+    content: $error-img;
+    position: absolute;
+    top: 6px;
+    left: 0;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

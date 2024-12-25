@@ -1,0 +1,45 @@
+.calendar_icon {
+   position: absolute;
+   right: 18px;
+   top: 50%;
+   transform: translateY(-50%);
+
+   width: 18px;
+   height: 20px;
+
+   fill: lightgray;
+}
+
+
+.calendar {
+   z-index: 21;
+   top: 40.5px;
+
+   &.visible {
+      visibility: hidden;
+   }
+}
+
+.reset {
+   color: orange;
+   color: gray;
+   left: .6rem;
+   top: .1rem;
+   opacity: .6;
+   cursor: default;
+   transition: .3s;
+
+   &:hover{
+      opacity: 1;
+      color: orange;
+   }
+}
+
+.range_calendar input {
+   cursor: pointer;
+}
+
+.range {
+   background-color: #eef5fc !important;
+   color: black;
+}

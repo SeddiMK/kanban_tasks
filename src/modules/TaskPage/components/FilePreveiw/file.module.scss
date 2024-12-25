@@ -1,0 +1,71 @@
+.file {
+   &_box {
+      padding: 8px;
+      border-radius: 12px;
+      width: 200px;
+      height: 149px;
+      background-color: #f4f6f8;
+   }
+   &_smallbox {
+      padding: 5px 25px 5px 7px;
+      margin: 0px 5px 5px 0px;
+      background-color: #f4f6f8;
+      position: relative;
+   }
+   &_closeicon {
+      width: 16px;
+      height: 16px;
+      fill: rgb(235, 89, 123);
+      cursor: pointer;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+   }
+   &_carticon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+   }
+   &_carticon > rect {
+      fill: none;
+   }
+   &_carticon:hover > path {
+      fill: rgb(235, 89, 123);
+   }
+   &_imgbox {
+      border-radius: 8px;
+      width: 184px;
+      height: 88px;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+   }
+   &_img {
+      border-radius: 8px;
+      width: 184px;
+      height: auto;
+      background-image: url("data:image/svg+xml,%3Csvg width='192' height='88' viewBox='0 0 192 88' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='192' height='88' rx='8' fill='white' /%3E%3Cpath d='M79.057 77H111.943C118.576 77 122 73.5062 122 66.8279V39.156H98.8626C95.0064 39.156 93.1554 37.3009 93.1554 33.4361V10H79.057C72.4552 10 69 13.4938 69 20.203V66.8279C69 73.5062 72.4552 77 79.057 77ZM99.4488 34.6419H121.692C121.506 33.2197 120.488 31.8902 118.884 30.2515L102.009 13.1228C100.467 11.5459 99.0786 10.4947 97.6595 10.3092V32.8486C97.6903 34.0545 98.2765 34.6419 99.4488 34.6419ZM83.5303 52.8528C82.2037 52.8528 81.2474 51.8943 81.2474 50.6576C81.2474 49.4209 82.2037 48.4624 83.5303 48.4624H107.562C108.827 48.4624 109.814 49.4209 109.814 50.6576C109.814 51.8943 108.827 52.8528 107.562 52.8528H83.5303ZM83.5303 64.4472C82.2037 64.4472 81.2474 63.4887 81.2474 62.252C81.2474 61.0152 82.2037 60.0568 83.5303 60.0568H107.562C108.827 60.0568 109.814 61.0152 109.814 62.252C109.814 63.4887 108.827 64.4472 107.562 64.4472H83.5303Z' fill='%23F4F6F8' /%3E%3C/svg%3E");
+   }
+   &_name {
+      font-family: inherit;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 120%;
+      color: #3787eb;
+      padding-top: 12px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+   }
+   &_date {
+      font-family: inherit;
+      text-overflow: ellipsis;
+      font-weight: 400;
+      font-size: 12px;
+      color: #abbed1;
+      padding-top: 8px;
+   }
+}

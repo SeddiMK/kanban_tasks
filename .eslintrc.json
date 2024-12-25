@@ -1,0 +1,44 @@
+{
+   "extends": [
+      "eslint:recommended",
+      "next/core-web-vitals",
+      "next/typescript",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:auto-import/recommended",
+      "plugin:prettier/recommended",
+      "plugin:@typescript-eslint/recommended"
+   ],
+
+   "parser": "@typescript-eslint/parser",
+   "plugins": ["@typescript-eslint", "module-resolver", "auto-import"],
+
+   "parserOptions": {
+      "ecmaFeatures": {
+         "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+   },
+
+   "rules": {
+      "import/order": [
+         "error",
+         {
+            "groups": [
+               ["builtin", "external"],
+               ["internal", "parent", "sibling", "index"]
+            ],
+            "newlines-between": "always"
+         }
+      ],
+      "module-resolver/use-alias": "error",
+      "auto-import/auto-import": [
+         "error",
+         {
+            "imports": ["react", "next/image"]
+         }
+      ]
+   }
+}

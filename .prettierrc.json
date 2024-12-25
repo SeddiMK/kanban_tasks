@@ -1,0 +1,29 @@
+{
+   "singleQuote": true,
+   "semi": true,
+   "tabWidth": 3,
+   "trailingComma": "es5",
+   "printWidth": 120,
+   "overrides": [
+      {
+         "files": "*.ts",
+         "options": {
+            "singleQuote": true,
+            "semi": true,
+            "tabWidth": 3,
+            "trailingComma": "es5",
+            "printWidth": 120
+         }
+      },
+      {
+         "files": "*.json",
+         "options": {
+            "singleQuote": true,
+            "semi": true,
+            "tabWidth": 3,
+            "trailingComma": "es5",
+            "printWidth": 120
+         }
+      }
+   ]
+}

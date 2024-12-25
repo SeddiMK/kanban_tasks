@@ -1,0 +1,64 @@
+.close-button-modal {
+   position: absolute;
+   top: 24px;
+   right: 24px;
+   border-radius: 6px;
+   width: 24px;
+   height: 24px;
+   background: rgba(244, 246, 248, 0.2);
+
+   &:hover {
+      svg {
+         path {
+            fill: #353535;
+         }
+      }
+   }
+   svg {
+      width: 10px;
+      height: 10px;
+
+      path {
+         fill: #ffffff;
+         transition: fill 0.3s ease-in-out;
+      }
+   }
+}
+
+.layout {
+   &_page {
+      display: flex;
+      justify-content: space-between;
+   }
+   &_modal {
+      padding: 78px 120px;
+      background-color: #1f1f1f8a;
+      position: fixed;
+      z-index: 20;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow-y: scroll;
+   }
+   &_modalbox {
+      display: flex;
+      border-radius: 16px;
+      justify-content: center;
+      gap: 16px;
+      padding: 24px;
+      background-color: #f4f6f8;
+   }
+   &_content {
+      width: 100%;
+      padding: 32px 32px 5px;
+   }
+}
+
+.page {
+   &_container {
+      //   padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+   }
+}

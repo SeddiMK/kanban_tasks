@@ -1,0 +1,62 @@
+{
+   "name": "task5",
+   "version": "0.1.0",
+   "private": true,
+   "scripts": {
+      "dev": "next dev",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint",
+      "gen-types": "npx swagger-typescript-api -p ../openapi.json -o ./src -n myApi.ts",
+      "prettify": "prettier ./src/**/*.{ts,tsx} --write",
+      "analyze": "next build && next export && webpack-bundle-analyzer dist/static/*/*.js"
+   },
+   "dependencies": {
+      "@hookform/resolvers": "^3.9.1",
+      "@reduxjs/toolkit": "^2.3.0",
+      "@svgr/webpack": "^8.1.0",
+      "date-fns": "^4.1.0",
+      "html-react-parser": "^5.2.0",
+      "next": "14.2.18",
+      "react": "18.2.0",
+      "react-calendar": "^5.1.0",
+      "react-cookie": "^7.2.2",
+      "react-dnd": "^16.0.1",
+      "react-dnd-html5-backend": "^16.0.1",
+      "react-dom": "18.2.0",
+      "react-hook-form": "^7.53.2",
+      "react-redux": "^9.1.2",
+      "react-scrollbars-custom": "^4.1.1",
+      "zod": "^3.23.8"
+   },
+   "devDependencies": {
+      "@types/node": "^20",
+      "@types/react": "^18",
+      "@types/react-dom": "^18",
+      "autoprefixer": "^10.4.20",
+      "eslint": "^8",
+      "eslint-config-next": "15.0.3",
+      "eslint-config-prettier": "^9.1.0",
+      "eslint-plugin-auto-import": "^0.1.1",
+      "eslint-plugin-import": "^2.31.0",
+      "eslint-plugin-prettier": "^5.2.1",
+      "next-images": "^1.8.5",
+      "postcss": "^8.4.49",
+      "postcss-nested": "^7.0.2",
+      "postcss-simple-vars": "^7.0.1",
+      "prettier": "^3.4.1",
+      "sass": "^1.81.0",
+      "simple-git-hooks": "^2.11.1",
+      "typescript": "^5"
+   },
+   "browserslist": [
+      "chrome >= 126",
+      "firefox >= 127",
+      "opera >= 111",
+      "not dead",
+      "not op_mini all"
+   ],
+   "simple-git-hooks": {
+      "prepare-commit-msg": "node ./task5/.gitlint.config.js"
+   }
+}

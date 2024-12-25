@@ -1,0 +1,41 @@
+$upload-icon: url("data:image/svg+xml,%3Csvg width='11' height='12' viewBox='0 0 11 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.9496 5.87715L5.15607 9.70713C4.19614 10.6815 2.90254 10.5882 2.07608 9.74859C1.23934 8.909 1.14694 7.61334 2.11714 6.63382L7.3018 1.39934C7.86647 0.829246 8.70834 0.730776 9.2576 1.28532C9.80687 1.84505 9.7042 2.68982 9.13954 3.25473L4.05241 8.4011C3.82654 8.63432 3.55961 8.56695 3.39534 8.41147C3.24647 8.2508 3.18487 7.98131 3.41074 7.74809L6.95787 4.16687C7.13754 3.9803 7.1478 3.7108 6.97327 3.53459C6.79874 3.36875 6.5318 3.37393 6.35214 3.55532L2.78961 7.15208C2.23521 7.71181 2.25574 8.56695 2.74854 9.06448C3.28241 9.60348 4.08834 9.58793 4.64274 9.0282L9.75554 3.8611C10.7514 2.86085 10.7155 1.53927 9.8428 0.658219C8.98554 -0.202102 7.656 -0.264294 6.66014 0.741141L1.44468 6.0119C0.145943 7.32829 0.23321 9.21478 1.41901 10.412C2.59967 11.5988 4.47334 11.6921 5.77207 10.3809L9.59127 6.53016C9.7658 6.35395 9.7658 6.03263 9.58614 5.86678C9.41674 5.68021 9.12927 5.70612 8.9496 5.87715Z' fill='%23ABBED1' /%3E%3C/svg%3E");
+
+.upload {
+   border: 1px dashed #abbed1;
+   border-radius: 8px;
+   padding: 24px;
+   margin: 16px 0;
+   height: 64px;
+   display: flex;
+   justify-content: center;
+   cursor: pointer;
+   &_text {
+      font-family: inherit;
+      font-weight: 400;
+      font-size: 12px;
+      width: fit-content;
+      padding-left: 15px;
+      line-height: 120%;
+      text-align: center;
+      color: #abbed1;
+      position: relative;
+   }
+   &_text::before {
+      content: $upload-icon;
+      display: block;
+      width: 10px;
+      height: 11px;
+      position: absolute;
+      top: 0;
+      left: 0;
+   }
+   &_input {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+   }
+   &_dragstyle {
+      border: 1px dashed #3787eb;
+      background-color: #f4f6f8;
+   }
+}

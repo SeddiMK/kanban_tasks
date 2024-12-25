@@ -1,0 +1,95 @@
+$defalt-avatar: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z'/%3E%3C/svg%3E");
+
+.comment {
+   padding-top: 32px;
+}
+
+.flex {
+   display: flex;
+   justify-content: space-between;
+}
+.userinfo {
+}
+.avatarbox {
+   background-color: #f4f6f8;
+   border-radius: 100%;
+   width: 32px;
+   height: 32px;
+   background: #32c997 $defalt-avatar 50% 3px no-repeat;
+}
+.username {
+   padding-left: 8px;
+   font-weight: 500;
+   font-size: 13px;
+   color: #2d2d2d;
+}
+.userdate {
+   padding-left: 8px;
+   padding-top: 4px;
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 120%;
+   color: #abbed1;
+}
+.text {
+   padding-top: 16px;
+   font-weight: 400;
+   font-size: 13px;
+   line-height: 140%;
+   color: #2d2d2d;
+   width: 100%;
+   word-wrap: break-word;
+}
+.commenticon {
+   fill: #abbed1;
+   cursor: pointer;
+   &:hover > path {
+      fill: #3787eb;
+   }
+}
+.commenticon > rect {
+   fill: none;
+}
+.preview {
+   margin-top: 10px;
+   padding-bottom: 32px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+}
+.submitter {
+   border-radius: 6px;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 171%;
+   text-align: center;
+   color: #fff;
+   padding: 8px 32px;
+   background: #3787eb;
+
+   &:hover {
+      background-color: #4b93ed;
+   }
+   &:focus {
+      outline: 2px solid #1b1a1d;
+   }
+   &:active {
+      background-color: #0053ad;
+      outline: none;
+   }
+   &:disabled {
+      background-color: #eef5fc;
+      outline: none;
+      color: #abbed1;
+   }
+}
+.close {
+   width: 16px;
+   height: 16px;
+   fill: #abbed1;
+   margin: 8px;
+   cursor: pointer;
+   &:hover > path {
+      fill: #3787eb;
+   }
+}
