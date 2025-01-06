@@ -14,7 +14,6 @@ export const projectsApi = createApi({
 
       updateProject: builder.mutation<{ message?: string }, { id: number; type: 'project'; setFavorite: boolean }>({
          // transformResponse: (response: { data: TaskMultiple }, meta, arg) => response.data,
-         //
          query: (data) => ({ url: `/favorite`, method: data.setFavorite ? 'POST' : 'DELETE', body: data }),
 
          async onQueryStarted({ id, setFavorite }, { dispatch, queryFulfilled }) {
