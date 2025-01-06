@@ -1,5 +1,5 @@
 import { prepareHeaders } from '@/utils/api';
-import { ProjectMultiple, ProjectShort, ProjectSingle } from '@/api/data.types';
+import { ProjectMultiple, ProjectSingle } from '@/api/data.types';
 import { BASE_API_URL } from '@/consts';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
