@@ -20,7 +20,6 @@ import Link from 'next/link';
 type FormSchema = z.infer<typeof projectsFilterFormSchema>;
 
 export function ProjectPage() {
-   //
    const { width } = useResize();
 
    const { data: { data: projects } = { data: [] }, isLoading, isSuccess, isError, error } = useGetProjectsQuery();
@@ -78,8 +77,6 @@ export function ProjectPage() {
          <h1>Проекты</h1>
 
          <form className={style.filters} onSubmit={handleSubmit(onSubmit)}>
-            {/* {JSON.stringify(errors)} */}
-
             <div data-error={errors.projectName?.message}>
                <label htmlFor="projectName" className="label">
                   Название проекта
@@ -113,11 +110,9 @@ export function ProjectPage() {
                      if (Number.parseInt(id) > 0) {
                         getTask(id.trim()).then(({ data: taskInfo }) => {
                            const { data: task } = taskInfo || {};
-                           // if (task) {}
                            setFoundTask(task);
                         });
-                     }
-                     else {
+                     } else {
                         setFoundTask(null);
                      }
                   }}
@@ -136,7 +131,7 @@ export function ProjectPage() {
                            {foundTask.name}
                         </Link>
                      ) : (
-                        <span style={{color: 'gray'}}>Задача не найдена</span>
+                        <span style={{ color: 'gray' }}>Задача не найдена</span>
                      )}
                   </div>
                ) : (
