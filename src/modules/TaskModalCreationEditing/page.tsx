@@ -86,10 +86,12 @@ export function TaskModalCreationEditing({
    const isEditMode = Boolean(taskId);
 
    const [taskData, setTaskData] = useState<TaskSingle | undefined>(undefined);
-   const [selectedOptionTasks, setSelectedOptionTasks] = useState<TaskType | undefined>(undefined);
-   const [selectedOptionComp, setSelectedOptionComp] = useState<Component | undefined>(undefined);
-   const [selectedPriority, setSelectedPriority] = useState<Priority | undefined>(undefined);
-   const [selectedOptionUsers, setSelectedOptionUsers] = useState<User[]>([]);
+
+   // const [selectedOptionTasks, setSelectedOptionTasks] = useState<TaskType | undefined>(undefined);
+   // const [selectedOptionComp, setSelectedOptionComp] = useState<Component | undefined>(undefined);
+   // const [selectedPriority, setSelectedPriority] = useState<Priority | undefined>(undefined);
+   // const [selectedOptionUsers, setSelectedOptionUsers] = useState<User[]>([]);
+
    const [files, setFiles] = useState<ResponseFile[]>([]);
    const [idTaskMain, setIdTaskMain] = useState<number | undefined>(taskId);
    const [isModalOpen, setModalOpen] = useState(false);
@@ -305,21 +307,17 @@ export function TaskModalCreationEditing({
 
    const handleTaskTypeChange = (value: TaskType | undefined) => {
       setValue('selectedOptionTasks', value);
-      setSelectedOptionTasks(value);
    };
 
    const handleComponentChange = (value: Component | undefined) => {
       setValue('selectedOptionComp', value);
-      setSelectedOptionComp(value);
    };
 
    const handleUsersChange = (value: User[]) => {
       setValue('selectedOptionsCheckbox', value);
-      setSelectedOptionUsers(value);
    };
 
    const handlePriorityChange = (value: Priority | undefined) => {
-      setSelectedPriority(value);
       setValue('selectedOptionPriority', value);
       clearErrors('selectedOptionPriority');
    };

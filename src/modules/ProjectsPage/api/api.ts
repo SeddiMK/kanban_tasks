@@ -1,5 +1,5 @@
-import { prepareHeaders } from '../../../utils/api';
-import { ProjectMultiple, ProjectShort, ProjectSingle } from '@/api/data.types';
+import { prepareHeaders } from '@/utils/api';
+import { ProjectMultiple, ProjectSingle } from '@/api/data.types';
 import { BASE_API_URL } from '@/consts';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
@@ -14,7 +14,6 @@ export const projectsApi = createApi({
 
       updateProject: builder.mutation<{ message?: string }, { id: number; type: 'project'; setFavorite: boolean }>({
          // transformResponse: (response: { data: TaskMultiple }, meta, arg) => response.data,
-         //
          query: (data) => ({ url: `/favorite`, method: data.setFavorite ? 'POST' : 'DELETE', body: data }),
 
          async onQueryStarted({ id, setFavorite }, { dispatch, queryFulfilled }) {
