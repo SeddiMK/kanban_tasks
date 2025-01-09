@@ -12,7 +12,6 @@ export default function MainPage() {
    const [LogInLogOutButton, setBtnContent] = useState('Войти');
    const [mainBtn, setMainBtn] = useState('Войти');
    const [mainLink, setMainLink] = useState('/auth');
-   // const [btnLink, setBtnLink] = useState('/auth');
    const router = useRouter();
 
    useEffect(() => {
