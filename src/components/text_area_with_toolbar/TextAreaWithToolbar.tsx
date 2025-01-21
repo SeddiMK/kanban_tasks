@@ -31,18 +31,15 @@ export default function TextAreaWithToolbar({ value, onChange, error }: TextArea
       fontWeight: 'normal',
       fontStyle: 'normal',
       fontFamily: 'inherit',
-   }); // Активные стили
-
+   });
    const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
    // Функция для применения и отмены стилей
    const applyStyleBtn = (style: string) => {
       const textarea = textAreaRef.current;
       if (activeButton === style) {
-         // Если стиль уже активен, сбрасываем его
          setActiveButton(null);
       } else {
-         // Применяем новый стиль
          setActiveButton(style);
       }
       if (textarea) textarea.focus();
@@ -55,7 +52,6 @@ export default function TextAreaWithToolbar({ value, onChange, error }: TextArea
 
       if (!textarea) return;
 
-      // Устанавливаем режим и обновляем только префикс для нового ввода
       if (format === 'bullet') {
          setCurrentListMode('bullet');
       } else if (format === 'numbered') {
@@ -99,7 +95,6 @@ export default function TextAreaWithToolbar({ value, onChange, error }: TextArea
          const after = value.substring(selectionStart);
          const updatedValue = `${before}\n${newLinePrefix}${after}`;
 
-         // Сохраняем текст в состоянии
          setText(updatedValue);
 
          // Устанавливаем новый курсор после обновления текста
@@ -238,7 +233,7 @@ export default function TextAreaWithToolbar({ value, onChange, error }: TextArea
             </button>
          </div>
          <div></div>
-         {/* Поле ввода */}
+
          <textarea
             ref={textAreaRef}
             className={style.textarea}
